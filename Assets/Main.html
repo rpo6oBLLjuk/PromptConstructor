@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Generator</title>
+    <link rel="stylesheet" href=".css/styles.css">
+    <link rel="stylesheet" href=".css/checkbox.css">
+    <link rel="stylesheet" href=".css/promt.css">
+</head>
+<body>
+    <script src=".js/LoadConfigs.js"></script>
+
+    <div class="menu-container">
+        <div class="title">Prompt Constructor</div>
+        <div class="content">
+            <!-- #region Pose -->
+            <div class="toggle" onclick="toggleHidden('PoseMenu')">
+                <u>Настройки позы</u>
+            </div>
+            <div class="hidden" id="PoseMenu">
+                <label>
+                    Основная поза
+                    <select id="Poses_dropdown"></select>
+                </label>
+
+                <label>
+                    Направление к камере
+                    <select id="Direction_dropdown"></select>
+                </label>
+
+                <label class="form-control">
+                    <input type="checkbox" id="Kneeling_checkbox">
+                    На коленях
+                </label>
+            </div>
+            <!-- #endregion -->
+
+            <br>
+
+            <!-- #region Clothes -->
+            <div class="toggle" onclick="toggleHidden('ClothesMenu')">
+                <u>Одежда</u>
+            </div>
+            <div class="hidden" id="ClothesMenu">
+                <label class="form-control">
+                    <input type="checkbox" id="Naked_checkbox">
+                    Голая
+                </label>
+
+                <label class="form-control">
+                    <input type="checkbox" id="Shibari_checkbox">
+                    Шибари, БДСМ
+                </label>
+
+            </div>
+            <!-- #endregion -->
+
+            <br>
+
+            <!-- #region Character -->
+            <div class="toggle" onclick="toggleHidden('CharacterMenu')">
+                <u>Персонаж</u>
+            </div>
+            <div class="hidden" id="CharacterMenu">
+                <label class="form-control">
+                    <input type="checkbox" id="Character_checkbox" onchange="toggleSettings('Character_checkbox', 'Character_setting')">
+                    Уточнить персонажа
+                </label>
+
+                <label class="hidden" id="Character_setting">
+                    Имя:
+                    <input type="text" id="Charactername_text" maxlength="50" placeholder="Введите имя персонажа..." required>
+                </label>
+            </div>
+            <!-- #endregion -->
+
+            <br>
+
+            <!-- #region Fluids -->
+            <div class="toggle" onclick="toggleHidden('FluidsMenu')">
+                <u>Жидкости</u>
+            </div>
+            <div class="hidden" id="FluidsMenu">
+                <label>
+                    Bukkake
+                    <select class="dropdown" id="Bukkake_dropdown" multiple></select>
+                </label>
+
+                <label class="form-control">
+                    <input type="checkbox" id="Wet_checkbox">
+                    Мокрая
+                </label>
+
+                <label class="form-control">
+                    <input type="checkbox" id="Sweat_checkbox">
+                    Пот
+                </label>
+
+            </div>
+            <!-- #endregion -->
+
+            <br>
+
+            <!-- #region Promt -->
+            <div class="prompt-container" id="Promt_Menu">
+                <h2>Промт</h2>
+                <button class="onScreenButton" onclick="toggleHidden('Promt_text')">Promt</button>
+                <textarea class="prompt-box hidden" id="Promt_text" readonly>Здесь будет текст промта.</textarea>
+            </div>
+            <!-- #endregion -->
+
+        </div>
+    </div>
+
+    <script>
+        function toggleHidden(id) {
+            var hiddenContent = document.getElementById(id);
+            hiddenContent.style.display =
+                hiddenContent.style.display === "none" || hiddenContent.style.display === ""
+                    ? "block"
+                    : "none";
+        }
+
+        function toggleSettings(id, settingsId) {
+            var checkbox = document.getElementById(id);
+            var settings = document.getElementById(settingsId);
+
+            // Показывать или скрывать блок с настройками в зависимости от состояния чекбокса
+            if (checkbox.checked) {
+                settings.style.display = "block";
+            } else {
+                settings.style.display = "none";
+            }
+        }
+
+        window.onload = function () {
+            toggleHidden('Promt_Menu');
+        };
+    </script>
+</body>
+</html>

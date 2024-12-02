@@ -1,0 +1,144 @@
+﻿/* Общие стили для всей страницы */
+body {
+    background-color: #333; /* Светло-серый фон для страницы */
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    min-width:350px;
+}
+
+/* Контейнер для меню */
+.menu-container {
+    background-color: white; /* Белый фон для контейнера */
+    width: 80%; /* Ширина контейнера */
+    max-width: 800px; /* Максимальная ширина контейнера */
+    border-radius: 15px; /* Скругленные углы */
+    padding: 20px; /* Отступы внутри контейнера */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень для контейнера */
+    margin: 50px auto;
+}
+
+/* Заголовок */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px; /* Отступ снизу для Title */
+}
+
+/* Контейнер для содержимого */
+.content {
+    display: grid;
+    gap: 15px;
+}
+
+
+/* Заголовки секций */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Скрытые секции */
+.hidden {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-left: 3px solid #2196F3;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Кнопки-открыватели секций */
+.toggle {
+    cursor: pointer;
+    color: #2196F3;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+    .toggle:hover {
+        text-decoration: underline;
+    }
+
+/* Инпуты и выпадающие списки */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="checkbox"], input[type="text"], select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Для мульти-селектов */
+select[multiple] {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Добавление теней и переходов */
+.section, .hidden, .toggle {
+    transition: all 0.3s ease-in-out;
+}
+
+    .section:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+* {
+    box-sizing: border-box;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.dropdown {
+    width: 100%;
+    height: auto; /* Устанавливаем автоматическую высоту */
+    min-height: 50px; /* Минимальная высота, чтобы элемент был видим */
+    overflow-y: auto; /* Появление полосы прокрутки, если элементов слишком много */
+    box-sizing: border-box; /* Чтобы учесть padding в размерах */
+}
+
+.onScreenButton {
+    position: absolute; /* Позиционируем кнопку относительно родительского контейнера */
+    bottom: 20px; /* Отступ снизу */
+    right: 50px; /* Центрируем кнопку относительно правого края */
+    transform: translateX(50%); /* Сдвигаем кнопку на 50% её ширины вправо */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Убедитесь, что кнопка будет поверх других элементов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для кнопки */
+    padding: 5px;
+    aspect-ratio: 4 / 3;
+}
