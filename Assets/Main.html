@@ -13,10 +13,10 @@
         <div class="title">Prompt Constructor</div>
         <div class="content">
             <!-- #region Pose -->
-            <div class="toggle" onclick="toggleHidden('PoseMenu')">
+            <div class="toggle" onclick="toggleHidden('Pose_Menu')">
                 <u>Настройки позы</u>
             </div>
-            <div class="hidden" id="PoseMenu">
+            <div class="hidden" id="Pose_Menu">
                 <label>
                     Основная поза
                     <select id="Poses_dropdown"></select>
@@ -37,10 +37,10 @@
             <br>
 
             <!-- #region Clothes -->
-            <div class="toggle" onclick="toggleHidden('ClothesMenu')">
+            <div class="toggle" onclick="toggleHidden('Clothes_Menu')">
                 <u>Одежда</u>
             </div>
-            <div class="hidden" id="ClothesMenu">
+            <div class="hidden" id="Clothes_Menu">
                 <label class="form-control">
                     <input type="checkbox" id="Naked_checkbox">
                     Голая
@@ -57,10 +57,10 @@
             <br>
 
             <!-- #region Character -->
-            <div class="toggle" onclick="toggleHidden('CharacterMenu')">
+            <div class="toggle" onclick="toggleHidden('Character_Menu')">
                 <u>Персонаж</u>
             </div>
-            <div class="hidden" id="CharacterMenu">
+            <div class="hidden" id="Character_Menu">
                 <label class="form-control">
                     <input type="checkbox" id="Character_checkbox" onchange="toggleSettings('Character_checkbox', 'Character_setting')">
                     Уточнить персонажа
@@ -76,10 +76,10 @@
             <br>
 
             <!-- #region Fluids -->
-            <div class="toggle" onclick="toggleHidden('FluidsMenu')">
+            <div class="toggle" onclick="toggleHidden('Fluids_Menu')">
                 <u>Жидкости</u>
             </div>
-            <div class="hidden" id="FluidsMenu">
+            <div class="hidden" id="Fluids_Menu">
                 <label>
                     Bukkake
                     <select class="dropdown" id="Bukkake_dropdown" multiple></select>
@@ -100,11 +100,11 @@
 
             <br>
 
-            <!-- #region Promt -->
-            <div class="prompt-container" id="Promt_Menu">
+            <!-- #region Prompt -->
+            <div class="prompt-container" id="Prompt_Menu">
                 <h2>Промт</h2>
-                <button class="onScreenButton" onclick="toggleHidden('Promt_text')">Promt</button>
-                <textarea class="prompt-box hidden" id="Promt_text" readonly>Здесь будет текст промта.</textarea>
+                <button class="onScreenButton" onclick="toggleHidden('Prompt_text')">Promt</button>
+                <textarea class="prompt-box hidden" id="Prompt_text" readonly>Здесь будет текст промта.</textarea>
             </div>
             <!-- #endregion -->
 
